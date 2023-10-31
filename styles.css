@@ -1,0 +1,158 @@
+/* Стили для фона */
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('image.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	opacity: 0.9;
+	z-index: -1;
+}
+
+/* Стили для меню-кнопки */
+.menu-button {
+	width: 1.3cm;
+	height: 1.3cm;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Стили для меню-кнопки иконки */
+.menu-icon {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: transparent;
+	transition: background-color 0.3s;
+	cursor: pointer;
+}
+
+.menu-button:hover .menu-icon {
+	background-color: transparent;
+}
+
+.menu-button::after {
+	content: "Byte";
+	position: absolute;
+	transform: rotate(-45deg);
+	color: white;
+	font-size: 16px;
+}
+
+/* Стили для меню-контента */
+.menu-content {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 8cm;
+	height: 10cm;
+	border-radius: 12px;
+	transition: width 0.3s, height 0.3s;
+	transform: scale(0);
+	transform-origin: top right;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+}
+
+.menu-button:hover .menu-content {
+	width: 8cm;
+	height: 10cm;
+	transform: scale(1);
+	opacity: 1;
+}
+
+/* Стили для меню-элементов */
+.menu-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-content li {
+	margin: 0.5cm 0;
+	font-size: 18px;
+	font-family: Arial, sans-serif;
+}
+
+.menu-content li a {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.597);
+	transition: color 0.3s;
+}
+
+.menu-content li a:hover {
+	color: rgb(255, 255, 255);
+}
+
+/* Стили для фона */
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('image.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	opacity: 0.9;
+	z-index: -1;
+}
+
+/* Стили для анимации */
+.animation-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Выравниваем элементы по центру */
+	justify-content: center; /* Выравниваем элементы по центру */
+	height: 100vh;
+}
+
+.animate-from-right {
+	opacity: 0;
+	transform: translateX(50px); /* Двигаем элемент вправо */
+	animation: fade-in-and-slide 1s forwards;
+}
+
+.animate-from-left {
+	opacity: 0;
+	transform: translateX(-50px); /* Двигаем элемент влево */
+	animation: fade-in-and-slide 1s forwards;
+}
+
+@keyframes fade-in-and-slide {
+	to {
+			opacity: 1;
+			transform: translateX(0);
+	}
+}
+
+h1.animate-from-right {
+	animation-delay: 1s; /* Задержка для заголовка */
+}
+
+h2.animate-from-left {
+	animation-delay: 2s; /* Задержка для текста */
+	text-align: center; /* Выравниваем текст по центру */
+	max-width: 800px; /* Устанавливаем максимальную ширину текста */
+}
